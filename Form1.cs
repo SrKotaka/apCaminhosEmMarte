@@ -59,5 +59,10 @@ namespace apCaminhosEmMarte
       // registros armazenados devem ser gravados no arquivo
       // agora, aberto para saída (StreamWriter).
     }
-  }
+
+        private void lsbListagem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
