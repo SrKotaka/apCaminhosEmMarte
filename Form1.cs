@@ -50,12 +50,27 @@ namespace apCaminhosEmMarte
                         tabelaDeHash.Inserir(cidade);
                     }
                 }
+                lsbListagem.Items.Clear();
+                foreach (var cidade in tabelaDeHash.Conteudo())
+                {
+                    lsbListagem.Items.Add(cidade);
+                }
 
                 // Desenhar os nomes das cidades no mapa de Marte
                 // Implementar essa funcionalidade aqui.
-                
+                // Para isso, é necessário percorrer a tabela de hash
+                // e desenhar cada cidade no mapa.
+                // Para desenhar uma cidade, é necessário calcular
+                // as coordenadas x e y do ponto onde ela será desenhada.
+                // Para isso, é necessário saber as coordenadas x e y
+                // máximas e mínimas das cidades.
+                // Para desenhar o nome de uma cidade, é necessário
+                // instanciar um objeto Font e um objeto Brush.
+                // Para desenhar o nome de uma cidade, é necessário
+                // chamar o método DrawString do objeto Graphics.
+
             }
-        }
+    }
 
     private void FrmCaminhos_FormClosing(object sender, FormClosingEventArgs e)
     {
@@ -64,15 +79,15 @@ namespace apCaminhosEmMarte
             // agora, aberto para saída (StreamWriter).
             if (tabelaDeHash != null)
             {
-                using (var arquivo = new StreamWriter("cidades.txt"))
+                using (var arquivo = new StreamWriter("CidadesMarte2024.txt"))
                 {
                     foreach (var cidade in tabelaDeHash.Conteudo())
                     {
                         arquivo.WriteLine(cidade);
                     }
                 }
-            }
-        }
+            } 
+    }
 
     private void lsbListagem_SelectedIndexChanged(object sender, EventArgs e)
     {

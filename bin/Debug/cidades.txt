@@ -1,1 +1,16 @@
-100: Acheron        
+2: Lowell
+3: Echus Overlook
+19: Arena
+34: Gondor
+51: Odessa
+59: Bradbury
+69: Burroughs
+72: Arrakeen
+78: Cairo
+91: Lakefront
+97: Acheron
+99: Dumont
+105: Nicosia
+110: Bakhuysen
+125: Moria
+127: Esperan�a
