@@ -4,14 +4,14 @@ using System.IO;
 
 namespace apCaminhosEmMarte
 {
-    public class Cidade : IRegistro<Cidade>, IComparable<Cidade>
+    public class Cidade : IRegistro<Cidade>,
+                          IComparable<Cidade>
     {
         // atributos que formam uma linha do arquivo de cidades
         string nome;
         double x, y;
 
         public Cidade() { }  // construtor default
-
         public Cidade LerRegistro(StreamReader arquivo)
         {
             if (arquivo != null)  // está aberto
@@ -24,7 +24,6 @@ namespace apCaminhosEmMarte
             }
             return default(Cidade);  // para arquivo não aberto
         }
-
         public void EscreverRegistro(StreamWriter arquivo)
         {
             if (arquivo != null)
@@ -32,12 +31,10 @@ namespace apCaminhosEmMarte
                 arquivo.WriteLine($"{nome}{x:0.00000}{y:0.00000}");
             }
         }
-
         public int CompareTo(Cidade outra)  // <0, ==0, >0
         {
             return this.nome.CompareTo(outra.nome);
         }
-
         public string Chave => this.nome;
     }
 }
