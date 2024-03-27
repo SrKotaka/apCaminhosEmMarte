@@ -54,6 +54,7 @@ namespace apCaminhosEmMarte
                 foreach (var cidade in tabelaDeHash.Conteudo())
                 {
                     lsbListagem.Items.Add(cidade);
+                    //adicionar ao ler arquivo tambem para ler as cordenadas x e y
                 }
 
                 // Desenhar os nomes das cidades no mapa de Marte
