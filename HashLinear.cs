@@ -1,82 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 public class HashLinear<Tipo> : ITabelaDeHash<Tipo>
     where Tipo : IRegistro<Tipo>, IComparable<Tipo>
 {
-    private const int TABLE_SIZE = 131;
-    private Tipo[] tabela;
-    private bool[] ocupado;
-
-    public HashLinear()
+    public List<string> Conteudo()
     {
-        tabela = new Tipo[TABLE_SIZE];
-        ocupado = new bool[TABLE_SIZE];
+        throw new NotImplementedException();
     }
 
     public int Hash(string chave)
     {
-        long hash = 5381;
-        foreach (char c in chave)
-        {
-            hash = ((hash << 5) + hash) + c; // hash * 33 + c
-        }
-        return (int)(hash % TABLE_SIZE);
+        throw new NotImplementedException();
     }
 
-    public void Inserir(Tipo item)
+    bool ITabelaDeHash<Tipo>.Existe(Tipo item, out int onde)
     {
-        int indice = Hash(item.Chave);
-        while (ocupado[indice])
-        {
-            indice = (indice + 1) % TABLE_SIZE;
-        }
-        tabela[indice] = item;
-        ocupado[indice] = true;
+        throw new NotImplementedException();
     }
 
-    public bool Remover(Tipo item)
+    void ITabelaDeHash<Tipo>.Inserir(Tipo item)
     {
-        int indice = Hash(item.Chave);
-        while (ocupado[indice])
-        {
-            if (tabela[indice].Equals(item))
-            {
-                tabela[indice] = default(Tipo);
-                ocupado[indice] = false;
-                return true;
-            }
-            indice = (indice + 1) % TABLE_SIZE;
-        }
-        return false;
+        throw new NotImplementedException();
     }
 
-    public bool Existe(Tipo item, out int onde)
+    bool ITabelaDeHash<Tipo>.Remover(Tipo item)
     {
-        int indice = Hash(item.Chave);
-        while (ocupado[indice])
-        {
-            if (tabela[indice].Equals(item))
-            {
-                onde = indice;
-                return true;
-            }
-            indice = (indice + 1) % TABLE_SIZE;
-        }
-        onde = -1;
-        return false;
-    }
-
-    public List<string> Conteudo()
-    {
-        List<string> conteudo = new List<string>();
-        for (int i = 0; i < TABLE_SIZE; i++)
-        {
-            if (ocupado[i])
-            {
-                conteudo.Add($"{i}: {tabela[i].Chave}");
-            }
-        }
-        return conteudo;
+        throw new NotImplementedException();
     }
 }

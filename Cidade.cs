@@ -4,8 +4,8 @@ using System.IO;
 
 namespace apCaminhosEmMarte
 {
-    public class Cidade : IRegistro<Cidade>,
-                          IComparable<Cidade>
+    public class Cidade : IRegistro<Cidade>, 
+        IComparable<Cidade>
     {
         // atributos que formam uma linha do arquivo de cidades
         string nome;
