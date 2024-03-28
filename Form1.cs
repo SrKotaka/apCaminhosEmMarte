@@ -76,8 +76,8 @@ namespace apCaminhosEmMarte
                 }
                 // Desenhar os nomes das cidades no mapa de Marte
                 DesenharCidadesNoMapa();
-                
-                asCidades.Close();  // deixar arquivo fechado
+                // deixar arquivo fechado
+                asCidades.Close();  
             }
         }
 
