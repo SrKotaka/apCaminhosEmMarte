@@ -1,16 +1,21 @@
-2: Lowell
-3: Echus Overlook
-19: Arena
-34: Gondor
-51: Odessa
-59: Bradbury
-69: Burroughs
-72: Arrakeen
-78: Cairo
-91: Lakefront
-97: Acheron
-99: Dumont
-105: Nicosia
-110: Bakhuysen
-125: Moria
-127: Esperan�a
+   10 :  | Arena          
+   14 :  | Perseveran�a   
+   15 :  | Bradbury       
+   19 :  | Nicosia        
+   28 :  | Dumont         
+   30 :  | Moria          
+   38 :  | Odessa         
+   42 :  | Lowell         
+   43 :  | Underhill      
+   51 :  | Bakhuysen      
+   54 :  | Lakefront      
+   58 :  | Arrakeen       
+   62 :  | Burroughs      
+   64 :  | Tharsis        
+   78 :  | Echus Overlook 
+   99 :  | Gondor          | Senzeni Na     
+  103 :  | Acheron         | Rowan          
+  106 :  | Esperan�a      
+  114 :  | Temperan�a     
+  124 :  | Cairo          
+  127 :  | Sheffield      

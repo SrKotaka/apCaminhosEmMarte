@@ -8,8 +8,9 @@ namespace apCaminhosEmMarte
         IComparable<Cidade>
     {
         // atributos que formam uma linha do arquivo de cidades
-        string nome;
-        double x, y;
+        public string nome { get; set; } 
+        public double x { get; set; }
+        public double y { get; set; }
 
         public Cidade() { }  // construtor default
         public Cidade LerRegistro(StreamReader arquivo)
