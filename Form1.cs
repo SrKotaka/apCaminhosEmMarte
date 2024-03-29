@@ -100,22 +100,73 @@ namespace apCaminhosEmMarte
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            // Criar um novo objeto Cidade com os dados dos campos de texto
+            Cidade novaCidade = new Cidade();
+            novaCidade.nome = txtNome.Text;
+            novaCidade.x = (double)udX.Value;
+            novaCidade.y = (double)udY.Value;
 
+            // Inserir a cidade na tabela de hash correspondente à opção selecionada pelo usuário
+            tabelaDeHash.Inserir(novaCidade);
+
+            // Atualizar a lista de cidades exibida no ListBox
+            AtualizarListaCidades();
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
+            // Criar um objeto Cidade com os dados dos campos de texto
+            Cidade cidadeARemover = new Cidade();
+            cidadeARemover.nome = txtNome.Text;
+            cidadeARemover.x = (double)udX.Value;
+            cidadeARemover.y = (double)udY.Value;
 
+            // Remover a cidade da tabela de hash correspondente à opção selecionada pelo usuário
+            tabelaDeHash.Remover(cidadeARemover);
+
+            // Atualizar a lista de cidades exibida no ListBox
+            AtualizarListaCidades();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            // Criar um objeto Cidade com os dados dos campos de texto
+            Cidade cidadeABuscar = new Cidade();
+            cidadeABuscar.nome = txtNome.Text;
+            cidadeABuscar.x = (double)udX.Value;
+            cidadeABuscar.y = (double)udY.Value;
 
+            // Verificar se a cidade existe na tabela de hash correspondente à opção selecionada pelo usuário
+            int onde;
+            bool existe = tabelaDeHash.Existe(cidadeABuscar, out onde);
+
+            if (existe)
+            {
+                MessageBox.Show("A cidade existe na tabela de hash.");
+            }
+            else
+            {
+                MessageBox.Show("A cidade não existe na tabela de hash.");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            AtualizarListaCidades();
+        }
+        private void AtualizarListaCidades()
+        {
+            // Limpar o ListBox
+            lsbListagem.Items.Clear();
 
+            // Obter o conteúdo da tabela de hash correspondente à opção selecionada pelo usuário
+            List<string> conteudo = tabelaDeHash.Conteudo();
+
+            // Adicionar os itens da lista ao ListBox
+            foreach (string item in conteudo)
+            {
+                lsbListagem.Items.Add(item);
+            }
         }
     }
 }
