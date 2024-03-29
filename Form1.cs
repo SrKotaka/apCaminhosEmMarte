@@ -20,27 +20,22 @@ namespace apCaminhosEmMarte
         }
         private void DesenharCidadesNoMapa()
         {
+            var cidade = new Cidade();
+            
             // Obter o objeto Graphics do PictureBox
             Graphics g = pbMapa.CreateGraphics();
 
-            // Limpar o PictureBox antes de desenhar as cidades
-            g.Clear(Color.White);
-
             // Definir a cor do pincel para desenhar as cidades
-            Brush brush = new SolidBrush(Color.Black);
+            Brush brush = new SolidBrush(Color.Red);
 
             // Definir a fonte para desenhar os nomes das cidades
             Font font = new Font("Arial", 10);
+            
+            // Desenhar um círculo no local da cidade
+            g.FillEllipse(brush, (float)cidade.x, (float)cidade.y, 10, 10);
 
-            // Percorrer todas as cidades na tabela de hash
-            foreach (var cidade in tabelaDeHash.Conteudo())
-            {
-                // Desenhar um círculo no local da cidade
-                g.FillEllipse(brush, (double)cidade.x, (double)cidade.y, 10, 10);
-
-                // Desenhar o nome da cidade próximo ao círculo
-                g.DrawString(cidade.nome, font, brush, (double)cidade.x + 10, (double)cidade.y);
-            }
+            // Desenhar o nome da cidade próximo ao círculo
+            g.DrawString(cidade.nome, font, brush, (float)cidade.x + 10, (float)cidade.y);
         }
 
         private void btnAbrirArquivo_Click(object sender, EventArgs e)
@@ -74,6 +69,8 @@ namespace apCaminhosEmMarte
                     // pelo usuário
                     tabelaDeHash.Inserir(cidade);
                 }
+                // Forçar o PictureBox a redesenhar sua superfície
+                pbMapa.Invalidate();
                 // Desenhar os nomes das cidades no mapa de Marte
                 DesenharCidadesNoMapa();
                 // deixar arquivo fechado
