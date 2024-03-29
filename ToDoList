@@ -1,0 +1,42 @@
+(feito) Quando o usuário clicar no botão [Abrir Arquivo], um OpenFileDialog deve ser exibido para que o nome do
+arquivo com os dados seja definido pelo usuário e o programa possa ler esse arquivo e armazenar seus
+registos na tabela de hash escolhida pelo usuário nos radioGroups que vemos na figura acima.
+
+
+
+(não feito) Portanto, usaremos, como tabela de hash, uma variável do tipo ITabelaDeHash, que é uma interface genérica
+que descreve as operações requeridas pela Tabela de Hash. As quatro diferentes técnicas de Hash serão
+codificadas em quatro diferentes classes que implementam a interface ITabelaDeHash. Caso a tabela de
+hash fique cheia, deverá ser realizada a técnica de Rehashing, transferindo os dados para uma tabela maior.
+
+
+
+(meio feito) Após isso, o programa deverá mostrar cada cidade no mapa, usando um círculo preenchido e o nome da
+cidade para mostrar onde a cidade se encontra.
+
+
+
+(não feito) O mapa poderá variar de tamanho caso você aumente ou diminua o tamanho do formulário. Assim, como as
+coordenadas X e Y são proporcionais, para determinar a o pixel (x, y) exato da cidade no mapa que está
+sendo exibido, a largura do mapa deve ser multiplicada pela coordenada X da cidade e a altura do mapa deve
+ser multiplicada pela coordenada Y da cidade. Por exemplo, se o mapa estiver sendo exibido com tamanho
+de 1200 x 600 pixels (largura x altura), para a cidade de Acheron do exemplo acima as coordenadas onde o
+círculo deve ser exibido nesse mapa será (136, 173). Você pode escrever o nome da cidade abaixo do
+círculo.
+
+
+
+(feito) A atualização do PictureBox para que os nomes de cidades sejam exibidos é feita no evento Paint do
+PictureBox. Para disparar esse evento, o programa precisará executar o método PictureBox.Invalidate() após
+ler os dados e armazená-los na tabela de hash escolhida.
+
+
+
+(meio feito) Os botões [+], [-], [Lupa], [Lista] devem ser usados para chamar os métodos correspondentes na tabela de
+Hash, usando o txtNome, udX e udY como dados de origem para criação do objeto Cidade que será usados
+nesses métodos de Hash.
+
+
+
+(feito) Quando o programa for finalizado, deve-se gravar em arquivo os dados armazenados na tabela de Hash.
+Essa gravação será feita no arquivo selecionado pelo usuário quando pressionou o botão [Abrir Arquivo].
