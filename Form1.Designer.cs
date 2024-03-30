@@ -225,6 +225,7 @@
             this.pbMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapa.TabIndex = 3;
             this.pbMapa.TabStop = false;
+            this.pbMapa.Click += new System.EventHandler(this.pbMapa_Click);
             // 
             // groupBox1
             // 
