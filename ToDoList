@@ -4,7 +4,7 @@ registos na tabela de hash escolhida pelo usuário nos radioGroups que vemos na 
 
 
 
-(não feito) Portanto, usaremos, como tabela de hash, uma variável do tipo ITabelaDeHash, que é uma interface genérica
+(feito) Portanto, usaremos, como tabela de hash, uma variável do tipo ITabelaDeHash, que é uma interface genérica
 que descreve as operações requeridas pela Tabela de Hash. As quatro diferentes técnicas de Hash serão
 codificadas em quatro diferentes classes que implementam a interface ITabelaDeHash. Caso a tabela de
 hash fique cheia, deverá ser realizada a técnica de Rehashing, transferindo os dados para uma tabela maior.
