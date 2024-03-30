@@ -179,5 +179,10 @@ namespace apCaminhosEmMarte
                 lsbListagem.Items.Add(item);
             }
         }
+
+        private void lsbListagem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
