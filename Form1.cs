@@ -189,7 +189,7 @@ namespace apCaminhosEmMarte
 
         }
 
-        private void pbMapa_Click(object sender, EventArgs e)
+        private void pbMapa_Paint(object sender, PaintEventArgs e)
         {
 
         }
