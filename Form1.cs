@@ -19,10 +19,6 @@ namespace apCaminhosEmMarte
         {
             
         }
-        private void pbMapa_Paint(object sender, PaintEventArgs e)
-        {
-            DesenharCidadesNoMapa(cidades, e.Graphics);
-        }
         private void DesenharCidadesNoMapa(List<Cidade> cidades, Graphics g)
         {
             // Definir a cor do pincel para desenhar as cidades
