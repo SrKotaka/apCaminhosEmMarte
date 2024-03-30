@@ -104,7 +104,7 @@ namespace apCaminhosEmMarte
             Cidade novaCidade = new Cidade();
             novaCidade.nome = txtNome.Text;
             novaCidade.x = (double)udX.Value;
-            novaCidade.y = (double)numericUpDown1.Value;
+            novaCidade.y = (double)udY.Value;
 
             // Inserir a cidade na tabela de hash correspondente à opção selecionada pelo usuário
             tabelaDeHash.Inserir(novaCidade);
@@ -119,7 +119,7 @@ namespace apCaminhosEmMarte
             Cidade cidadeARemover = new Cidade();
             cidadeARemover.nome = txtNome.Text;
             cidadeARemover.x = (double)udX.Value;
-            cidadeARemover.y = (double)numericUpDown1.Value;
+            cidadeARemover.y = (double)udY.Value;
 
             // Remover a cidade da tabela de hash correspondente à opção selecionada pelo usuário
             tabelaDeHash.Remover(cidadeARemover);
@@ -134,7 +134,7 @@ namespace apCaminhosEmMarte
             Cidade cidadeABuscar = new Cidade();
             cidadeABuscar.nome = txtNome.Text;
             cidadeABuscar.x = (double)udX.Value;
-            cidadeABuscar.y = (double)numericUpDown1.Value;
+            cidadeABuscar.y = (double)udY.Value;
 
             // Verificar se a cidade existe na tabela de hash correspondente à opção selecionada pelo usuário
             int onde;
