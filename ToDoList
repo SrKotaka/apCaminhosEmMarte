@@ -40,3 +40,5 @@ nesses métodos de Hash.
 
 (feito) Quando o programa for finalizado, deve-se gravar em arquivo os dados armazenados na tabela de Hash.
 Essa gravação será feita no arquivo selecionado pelo usuário quando pressionou o botão [Abrir Arquivo].
+
+(não feito) salvar as alterações feita no arquivo pelos botoes

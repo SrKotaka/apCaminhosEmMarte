@@ -14,28 +14,31 @@ namespace apCaminhosEmMarte
         }
 
         ITabelaDeHash<Cidade> tabelaDeHash;
+        List<Cidade> cidades = new List<Cidade>(); 
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
-        private void DesenharCidadesNoMapa()
+        private void pbMapa_Paint(object sender, PaintEventArgs e)
         {
-            var cidade = new Cidade();
-            
-            // Obter o objeto Graphics do PictureBox
-            Graphics g = pbMapa.CreateGraphics();
-
+            DesenharCidadesNoMapa(cidades, e.Graphics);
+        }
+        private void DesenharCidadesNoMapa(List<Cidade> cidades, Graphics g)
+        {
             // Definir a cor do pincel para desenhar as cidades
             Brush brush = new SolidBrush(Color.Red);
 
             // Definir a fonte para desenhar os nomes das cidades
             Font font = new Font("Arial", 10);
-            
-            // Desenhar um círculo no local da cidade
-            g.FillEllipse(brush, (float)cidade.x, (float)cidade.y, 10, 10);
 
-            // Desenhar o nome da cidade próximo ao círculo
-            g.DrawString(cidade.nome, font, brush, (float)cidade.x + 10, (float)cidade.y);
+            foreach (var cidade in cidades)
+            {
+                // Desenhar um círculo no local da cidade
+                g.FillEllipse(brush, (float)cidade.x, (float)cidade.y, 10, 10);
+
+                // Desenhar o nome da cidade próximo ao círculo
+                g.DrawString(cidade.nome, font, brush, (float)cidade.x + 10, (float)cidade.y);
+            }
         }
 
         private void btnAbrirArquivo_Click(object sender, EventArgs e)
@@ -84,8 +87,13 @@ namespace apCaminhosEmMarte
                 }
                 // Forçar o PictureBox a redesenhar sua superfície
                 pbMapa.Invalidate();
+                // Atualize a lista de cidades
+                cidades.Clear();
+                foreach (var item in tabelaDeHash.Conteudo())
+                {
+                    cidades.Add(new Cidade { nome = item });
+                }
                 // Desenhar os nomes das cidades no mapa de Marte
-                DesenharCidadesNoMapa();
             }
         }
 

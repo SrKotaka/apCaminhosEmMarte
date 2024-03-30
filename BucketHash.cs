@@ -66,5 +66,4 @@ class BucketHash<Tipo> : ITabelaDeHash<Tipo>
       }
     return saida;
   }
-
 }
