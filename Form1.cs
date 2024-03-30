@@ -57,24 +57,35 @@ namespace apCaminhosEmMarte
                     tabelaDeHash = new HashDuplo<Cidade>();
 
                 // abrimos o arquivo escolhido
-                var asCidades = new StreamReader(dlgAbrir.FileName);
-                // ler registros do arquivo aberto
-                while (!asCidades.EndOfStream)
+                using (var asCidades = new StreamReader(dlgAbrir.FileName))
                 {
-                    // instanciar um objeto cidade
-                    Cidade cidade = new Cidade().LerRegistro(asCidades);
-                    // lê-lo do arquivo para preencher seus atributos
-                    // armazenar esse objeto na tabela de Hash
-                    // de acordo com a técnica de hash escolhida
-                    // pelo usuário
-                    tabelaDeHash.Inserir(cidade);
+                    // Limpar o ListBox antes de adicionar as novas cidades
+                    lsbListagem.Items.Clear();
+
+                    // ler registros do arquivo aberto
+                    while (!asCidades.EndOfStream)
+                    {
+                        // instanciar um objeto cidade
+                        Cidade cidade = new Cidade().LerRegistro(asCidades);
+                        // lê-lo do arquivo para preencher seus atributos
+                        // armazenar esse objeto na tabela de Hash
+                        // de acordo com a técnica de hash escolhida
+                        // pelo usuário
+                        tabelaDeHash.Inserir(cidade);
+                        // Adicionar o nome da cidade à lista de cidades no ListBox
+                        lsbListagem.Items.Add(cidade.nome);
+                    }
+
+                    // Selecionar a primeira cidade da lista, se houver
+                    if (lsbListagem.Items.Count > 0)
+                    {
+                        lsbListagem.SelectedIndex = 0;
+                    }
                 }
                 // Forçar o PictureBox a redesenhar sua superfície
                 pbMapa.Invalidate();
                 // Desenhar os nomes das cidades no mapa de Marte
                 DesenharCidadesNoMapa();
-                // deixar arquivo fechado
-                asCidades.Close();  
             }
         }
 
