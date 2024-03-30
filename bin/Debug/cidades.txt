@@ -1,3 +1,4 @@
+    0 :  |  |  |  |  | 
    10 :  | Arena          
    14 :  | Perseveran�a   
    15 :  | Bradbury       

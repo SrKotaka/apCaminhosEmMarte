@@ -191,7 +191,7 @@ namespace apCaminhosEmMarte
 
         private void pbMapa_Paint(object sender, PaintEventArgs e)
         {
-
+            DesenharCidadesNoMapa(cidades, e.Graphics);
         }
     }
 }
