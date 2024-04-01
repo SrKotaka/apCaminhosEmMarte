@@ -5,23 +5,21 @@ using System.Collections.Generic;
 public class HashQuadratico<Tipo> : ITabelaDeHash<Tipo>
     where Tipo : IComparable<Tipo>, IRegistro<Tipo>
 {
-    private const int tamanhoDaTabela = 131;  // para gerar mais colisões; o ideal é primo > 100
+    private const int tamanhoDaTabela = 131;
     private Tipo[] dados;
+
     public HashQuadratico()
     {
         dados = new Tipo[tamanhoDaTabela];
     }
+
     public List<string> Conteudo()
     {
         List<string> conteudo = new List<string>();
 
-        foreach (var item in dados)
-        {
-            if (item != null)
-            {
-                conteudo.Add(item.ToString());
-            }
-        }
+        for (int i = 0; i < dados.Length; i++)
+            if (dados[i] != null)
+                conteudo.Add(i + ": " + dados[i].Chave);
 
         return conteudo;
     }
@@ -45,11 +43,10 @@ public class HashQuadratico<Tipo> : ITabelaDeHash<Tipo>
         return false;
     }
 
-
     public int Hash(string chave)
     {
         int hash = Math.Abs(chave.GetHashCode());
-        int indice = hash % tamanhoDaTabela; // tamanhoDaTabela é o tamanho da tabela de hash
+        int indice = hash % tamanhoDaTabela;
 
         for (int i = 1; dados[indice] != null; i++)
         {
@@ -84,5 +81,4 @@ public class HashQuadratico<Tipo> : ITabelaDeHash<Tipo>
 
         return false;
     }
-
 }

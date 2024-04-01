@@ -15,6 +15,7 @@ namespace apCaminhosEmMarte
 
         ITabelaDeHash<Cidade> tabelaDeHash;
         List<Cidade> cidades = new List<Cidade>(); 
+
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -75,9 +76,6 @@ namespace apCaminhosEmMarte
 
                         // Adicionar cidade à lista de cidades a serem desenhadas no mapa
                         cidades.Add(cidade);
-
-                        // Adicionar o nome da cidade à lista de cidades no ListBox
-                        lsbListagem.Items.Add(cidade.nome);
                     }
 
                     // Selecionar a primeira cidade da lista, se houver
@@ -86,6 +84,7 @@ namespace apCaminhosEmMarte
                         lsbListagem.SelectedIndex = 0;
                     }
                 }
+                AtualizarListaCidades();
                 // Forçar o PictureBox a redesenhar sua superfície
                 pbMapa.Invalidate();
             }
@@ -134,11 +133,21 @@ namespace apCaminhosEmMarte
             cidadeARemover.nome = txtNome.Text;
 
             // Remover a cidade da tabela de hash correspondente à opção selecionada pelo usuário
-            tabelaDeHash.Remover(cidadeARemover);
+            bool removido = tabelaDeHash.Remover(cidadeARemover);
+
+            if (removido)
+            {
+                MessageBox.Show("Cidade removida com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show("Cidade não encontrada na tabela de hash.");
+            }
 
             // Atualizar a lista de cidades exibida no ListBox
             AtualizarListaCidades();
         }
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -159,6 +168,7 @@ namespace apCaminhosEmMarte
                 MessageBox.Show("A cidade não existe na tabela de hash.");
             }
         }
+
 
         private void AtualizarListaCidades()
         {

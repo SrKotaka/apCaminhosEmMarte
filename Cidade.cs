@@ -16,6 +16,7 @@ namespace apCaminhosEmMarte
             {
                 string linha = arquivo.ReadLine(); // lê uma linha
                 nome = linha.Substring(0, 15);  // (inicio, quantos)
+                nome = nome.Trim(); //retirar os espaços do nome
                 x = double.Parse(linha.Substring(15, 7));
                 y = double.Parse(linha.Substring(22, 7));
                 return this;
@@ -26,8 +27,20 @@ namespace apCaminhosEmMarte
         {
             if (arquivo != null)
             {
-                arquivo.WriteLine($"{nome}{x:0.00000}{y:0.00000}");
+                arquivo.WriteLine($"{nome.PadRight(15)}{x:0.00000}{y:0.00000}");
             }
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (!(obj is Cidade)) return false;
+
+            Cidade aCidade = (Cidade)obj;
+            if (nome != aCidade.nome)
+                return false;
+
+            return true;
+
         }
         public int CompareTo(Cidade outra)  // <0, ==0, >0
         {

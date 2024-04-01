@@ -8,24 +8,21 @@ using System.Threading.Tasks;
 public class HashLinear<Tipo> : ITabelaDeHash<Tipo>
     where Tipo : IRegistro<Tipo>, IComparable<Tipo>
 {
-    private const int tamanhoDaTabela = 131; 
-    private Tipo[] dados; // Usaremos uma matriz de Tipo
+    private const int tamanhoDaTabela = 131;
+    Tipo[] dados;
 
     public HashLinear()
     {
         dados = new Tipo[tamanhoDaTabela];
     }
+
     public List<string> Conteudo()
     {
         List<string> conteudo = new List<string>();
 
-        foreach (var item in dados)
-        {
-            if (item != null)
-            {
-                conteudo.Add(item.ToString());
-            }
-        }
+        for (int i = 0; i < dados.Length; i++)
+            if (dados[i] != null)
+                conteudo.Add(i + ": " + dados[i].Chave);
 
         return conteudo;
     }
@@ -54,14 +51,15 @@ public class HashLinear<Tipo> : ITabelaDeHash<Tipo>
         return false;
     }
 
-
-    void ITabelaDeHash<Tipo>.Inserir(Tipo item)
+    public void Inserir(Tipo item)
     {
         int indice = Hash(item.Chave);
 
         while (dados[indice] != null)
         {
-            indice = (indice + 1) % tamanhoDaTabela;
+            indice = (indice + 1);
+            if (indice >= tamanhoDaTabela)
+                break;
         }
 
         dados[indice] = item;
@@ -78,5 +76,4 @@ public class HashLinear<Tipo> : ITabelaDeHash<Tipo>
 
         return false;
     }
-
 }
