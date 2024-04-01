@@ -32,7 +32,7 @@ ler os dados e armazená-los na tabela de hash escolhida.
 
 
 
-(meio feito) Os botões [+], [-], [Lupa], [Lista] devem ser usados para chamar os métodos correspondentes na tabela de
+(feito) Os botões [+], [-], [Lupa], [Lista] devem ser usados para chamar os métodos correspondentes na tabela de
 Hash, usando o txtNome, udX e udY como dados de origem para criação do objeto Cidade que será usados
 nesses métodos de Hash.
 
