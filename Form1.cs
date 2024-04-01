@@ -124,7 +124,7 @@ namespace apCaminhosEmMarte
             tabelaDeHash.Inserir(novaCidade);
 
             // Atualizar a lista de cidades exibida no ListBox
-            lsbListagem.Items.Add(novaCidade.nome);
+            AtualizarListaCidades();
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace apCaminhosEmMarte
             tabelaDeHash.Remover(cidadeARemover);
 
             // Atualizar a lista de cidades exibida no ListBox
-            lsbListagem.Items.Remove(cidadeARemover.nome);
+            AtualizarListaCidades();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
