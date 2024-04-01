@@ -32,7 +32,7 @@
             this.dlgAbrir = new System.Windows.Forms.OpenFileDialog();
             this.tbControl = new System.Windows.Forms.TabControl();
             this.tpCidades = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnListagem = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
@@ -66,18 +66,20 @@
             // 
             // tbControl
             // 
+            this.tbControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbControl.Controls.Add(this.tpCidades);
             this.tbControl.Controls.Add(this.tpCaminhos);
             this.tbControl.Location = new System.Drawing.Point(1, 0);
-            this.tbControl.Margin = new System.Windows.Forms.Padding(4);
             this.tbControl.Name = "tbControl";
             this.tbControl.SelectedIndex = 0;
-            this.tbControl.Size = new System.Drawing.Size(1044, 566);
+            this.tbControl.Size = new System.Drawing.Size(783, 460);
             this.tbControl.TabIndex = 2;
             // 
             // tpCidades
             // 
-            this.tpCidades.Controls.Add(this.button1);
+            this.tpCidades.Controls.Add(this.btnListagem);
             this.tpCidades.Controls.Add(this.btnBuscar);
             this.tpCidades.Controls.Add(this.btnRemover);
             this.tpCidades.Controls.Add(this.btnInserir);
@@ -90,43 +92,39 @@
             this.tpCidades.Controls.Add(this.label1);
             this.tpCidades.Controls.Add(this.pbMapa);
             this.tpCidades.Controls.Add(this.groupBox1);
-            this.tpCidades.Location = new System.Drawing.Point(4, 25);
-            this.tpCidades.Margin = new System.Windows.Forms.Padding(4);
+            this.tpCidades.Location = new System.Drawing.Point(4, 22);
             this.tpCidades.Name = "tpCidades";
-            this.tpCidades.Padding = new System.Windows.Forms.Padding(4);
-            this.tpCidades.Size = new System.Drawing.Size(1036, 537);
+            this.tpCidades.Padding = new System.Windows.Forms.Padding(3);
+            this.tpCidades.Size = new System.Drawing.Size(775, 434);
             this.tpCidades.TabIndex = 0;
             this.tpCidades.Text = "Cidades";
             this.tpCidades.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnListagem
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(152, 177);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 28);
-            this.button1.TabIndex = 14;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnListagem.Image = ((System.Drawing.Image)(resources.GetObject("btnListagem.Image")));
+            this.btnListagem.Location = new System.Drawing.Point(114, 144);
+            this.btnListagem.Name = "btnListagem";
+            this.btnListagem.Size = new System.Drawing.Size(28, 23);
+            this.btnListagem.TabIndex = 14;
+            this.btnListagem.UseVisualStyleBackColor = true;
+            this.btnListagem.Click += new System.EventHandler(this.btnListagem_Click);
             // 
             // btnBuscar
             // 
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(107, 177);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Location = new System.Drawing.Point(80, 144);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(37, 28);
+            this.btnBuscar.Size = new System.Drawing.Size(28, 23);
             this.btnBuscar.TabIndex = 13;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(61, 177);
-            this.btnRemover.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemover.Location = new System.Drawing.Point(46, 144);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(37, 28);
+            this.btnRemover.Size = new System.Drawing.Size(28, 23);
             this.btnRemover.TabIndex = 12;
             this.btnRemover.Text = "-";
             this.btnRemover.UseVisualStyleBackColor = true;
@@ -134,10 +132,9 @@
             // 
             // btnInserir
             // 
-            this.btnInserir.Location = new System.Drawing.Point(16, 178);
-            this.btnInserir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInserir.Location = new System.Drawing.Point(12, 145);
             this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(37, 28);
+            this.btnInserir.Size = new System.Drawing.Size(28, 23);
             this.btnInserir.TabIndex = 11;
             this.btnInserir.Text = "+";
             this.btnInserir.UseVisualStyleBackColor = true;
@@ -145,70 +142,63 @@
             // 
             // lsbListagem
             // 
+            this.lsbListagem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lsbListagem.FormattingEnabled = true;
-            this.lsbListagem.ItemHeight = 16;
-            this.lsbListagem.Location = new System.Drawing.Point(11, 215);
-            this.lsbListagem.Margin = new System.Windows.Forms.Padding(4);
+            this.lsbListagem.Location = new System.Drawing.Point(8, 175);
             this.lsbListagem.Name = "lsbListagem";
             this.lsbListagem.ScrollAlwaysVisible = true;
-            this.lsbListagem.Size = new System.Drawing.Size(227, 212);
+            this.lsbListagem.Size = new System.Drawing.Size(171, 251);
             this.lsbListagem.TabIndex = 10;
-            this.lsbListagem.SelectedIndexChanged += new System.EventHandler(this.lsbListagem_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 145);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(7, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 16);
+            this.label3.Size = new System.Drawing.Size(17, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Y:";
             // 
             // udY
             // 
             this.udY.DecimalPlaces = 5;
-            this.udY.Location = new System.Drawing.Point(83, 145);
-            this.udY.Margin = new System.Windows.Forms.Padding(4);
+            this.udY.Location = new System.Drawing.Point(62, 118);
             this.udY.Name = "udY";
-            this.udY.Size = new System.Drawing.Size(85, 22);
+            this.udY.Size = new System.Drawing.Size(64, 20);
             this.udY.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 108);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(7, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 16);
+            this.label2.Size = new System.Drawing.Size(17, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "X:";
             // 
             // udX
             // 
             this.udX.DecimalPlaces = 5;
-            this.udX.Location = new System.Drawing.Point(83, 110);
-            this.udX.Margin = new System.Windows.Forms.Padding(4);
+            this.udX.Location = new System.Drawing.Point(62, 89);
             this.udX.Name = "udX";
-            this.udX.Size = new System.Drawing.Size(85, 22);
+            this.udX.Size = new System.Drawing.Size(64, 20);
             this.udX.TabIndex = 6;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(83, 78);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNome.Location = new System.Drawing.Point(62, 63);
             this.txtNome.MaxLength = 15;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(155, 22);
+            this.txtNome.Size = new System.Drawing.Size(117, 20);
             this.txtNome.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 78);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(7, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 16);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Cidade:";
             // 
@@ -218,14 +208,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbMapa.Image = ((System.Drawing.Image)(resources.GetObject("pbMapa.Image")));
-            this.pbMapa.Location = new System.Drawing.Point(248, 78);
-            this.pbMapa.Margin = new System.Windows.Forms.Padding(4);
+            this.pbMapa.Location = new System.Drawing.Point(186, 63);
             this.pbMapa.Name = "pbMapa";
-            this.pbMapa.Size = new System.Drawing.Size(783, 454);
+            this.pbMapa.Size = new System.Drawing.Size(587, 369);
             this.pbMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapa.TabIndex = 3;
             this.pbMapa.TabStop = false;
-            this.pbMapa.Click += new System.EventHandler(this.btnInserir_Click);
+            this.pbMapa.Click += new System.EventHandler(this.pbMapa_Click);
             this.pbMapa.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMapa_Paint);
             // 
             // groupBox1
@@ -238,21 +227,18 @@
             this.groupBox1.Controls.Add(this.rbSondagemQuadratica);
             this.groupBox1.Controls.Add(this.rbSondagemLinear);
             this.groupBox1.Controls.Add(this.rbBucketHash);
-            this.groupBox1.Location = new System.Drawing.Point(9, 7);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(7, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1020, 63);
+            this.groupBox1.Size = new System.Drawing.Size(765, 51);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Técnica de Hash desejada";
             // 
             // btnAbrirArquivo
             // 
-            this.btnAbrirArquivo.Location = new System.Drawing.Point(608, 22);
-            this.btnAbrirArquivo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAbrirArquivo.Location = new System.Drawing.Point(456, 18);
             this.btnAbrirArquivo.Name = "btnAbrirArquivo";
-            this.btnAbrirArquivo.Size = new System.Drawing.Size(100, 28);
+            this.btnAbrirArquivo.Size = new System.Drawing.Size(75, 23);
             this.btnAbrirArquivo.TabIndex = 4;
             this.btnAbrirArquivo.Text = "Abrir Arquivo";
             this.btnAbrirArquivo.UseVisualStyleBackColor = true;
@@ -261,10 +247,9 @@
             // rbHashDuplo
             // 
             this.rbHashDuplo.AutoSize = true;
-            this.rbHashDuplo.Location = new System.Drawing.Point(467, 30);
-            this.rbHashDuplo.Margin = new System.Windows.Forms.Padding(4);
+            this.rbHashDuplo.Location = new System.Drawing.Point(350, 24);
             this.rbHashDuplo.Name = "rbHashDuplo";
-            this.rbHashDuplo.Size = new System.Drawing.Size(99, 20);
+            this.rbHashDuplo.Size = new System.Drawing.Size(81, 17);
             this.rbHashDuplo.TabIndex = 3;
             this.rbHashDuplo.Text = "Hash Duplo";
             this.rbHashDuplo.UseVisualStyleBackColor = true;
@@ -272,10 +257,9 @@
             // rbSondagemQuadratica
             // 
             this.rbSondagemQuadratica.AutoSize = true;
-            this.rbSondagemQuadratica.Location = new System.Drawing.Point(289, 30);
-            this.rbSondagemQuadratica.Margin = new System.Windows.Forms.Padding(4);
+            this.rbSondagemQuadratica.Location = new System.Drawing.Point(217, 24);
             this.rbSondagemQuadratica.Name = "rbSondagemQuadratica";
-            this.rbSondagemQuadratica.Size = new System.Drawing.Size(164, 20);
+            this.rbSondagemQuadratica.Size = new System.Drawing.Size(131, 17);
             this.rbSondagemQuadratica.TabIndex = 2;
             this.rbSondagemQuadratica.Text = "Sondagem Quadrática";
             this.rbSondagemQuadratica.UseVisualStyleBackColor = true;
@@ -283,10 +267,9 @@
             // rbSondagemLinear
             // 
             this.rbSondagemLinear.AutoSize = true;
-            this.rbSondagemLinear.Location = new System.Drawing.Point(143, 30);
-            this.rbSondagemLinear.Margin = new System.Windows.Forms.Padding(4);
+            this.rbSondagemLinear.Location = new System.Drawing.Point(107, 24);
             this.rbSondagemLinear.Name = "rbSondagemLinear";
-            this.rbSondagemLinear.Size = new System.Drawing.Size(135, 20);
+            this.rbSondagemLinear.Size = new System.Drawing.Size(108, 17);
             this.rbSondagemLinear.TabIndex = 1;
             this.rbSondagemLinear.Text = "Sondagem Linear";
             this.rbSondagemLinear.UseVisualStyleBackColor = true;
@@ -295,10 +278,9 @@
             // 
             this.rbBucketHash.AutoSize = true;
             this.rbBucketHash.Checked = true;
-            this.rbBucketHash.Location = new System.Drawing.Point(24, 30);
-            this.rbBucketHash.Margin = new System.Windows.Forms.Padding(4);
+            this.rbBucketHash.Location = new System.Drawing.Point(18, 24);
             this.rbBucketHash.Name = "rbBucketHash";
-            this.rbBucketHash.Size = new System.Drawing.Size(104, 20);
+            this.rbBucketHash.Size = new System.Drawing.Size(87, 17);
             this.rbBucketHash.TabIndex = 0;
             this.rbBucketHash.TabStop = true;
             this.rbBucketHash.Text = "Bucket Hash";
@@ -306,22 +288,20 @@
             // 
             // tpCaminhos
             // 
-            this.tpCaminhos.Location = new System.Drawing.Point(4, 25);
-            this.tpCaminhos.Margin = new System.Windows.Forms.Padding(4);
+            this.tpCaminhos.Location = new System.Drawing.Point(4, 22);
             this.tpCaminhos.Name = "tpCaminhos";
-            this.tpCaminhos.Padding = new System.Windows.Forms.Padding(4);
-            this.tpCaminhos.Size = new System.Drawing.Size(1036, 537);
+            this.tpCaminhos.Padding = new System.Windows.Forms.Padding(3);
+            this.tpCaminhos.Size = new System.Drawing.Size(775, 434);
             this.tpCaminhos.TabIndex = 1;
             this.tpCaminhos.Text = "Caminhos";
             this.tpCaminhos.UseVisualStyleBackColor = true;
             // 
             // FrmCaminhos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 562);
+            this.ClientSize = new System.Drawing.Size(781, 457);
             this.Controls.Add(this.tbControl);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCaminhos";
             this.Text = "Caminhos Em Marte";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCaminhos_FormClosing);
@@ -361,7 +341,7 @@
     private System.Windows.Forms.Button btnInserir;
     private System.Windows.Forms.ListBox lsbListagem;
     private System.Windows.Forms.Button btnBuscar;
-    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Button btnListagem;
   }
 }
 

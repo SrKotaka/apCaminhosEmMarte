@@ -4,7 +4,7 @@ registos na tabela de hash escolhida pelo usuário nos radioGroups que vemos na 
 
 
 
-(feito) Portanto, usaremos, como tabela de hash, uma variável do tipo ITabelaDeHash, que é uma interface genérica
+(meio feito) Portanto, usaremos, como tabela de hash, uma variável do tipo ITabelaDeHash, que é uma interface genérica
 que descreve as operações requeridas pela Tabela de Hash. As quatro diferentes técnicas de Hash serão
 codificadas em quatro diferentes classes que implementam a interface ITabelaDeHash. Caso a tabela de
 hash fique cheia, deverá ser realizada a técnica de Rehashing, transferindo os dados para uma tabela maior.
@@ -16,7 +16,7 @@ cidade para mostrar onde a cidade se encontra.
 
 
 
-(não feito) O mapa poderá variar de tamanho caso você aumente ou diminua o tamanho do formulário. Assim, como as
+(meio feito) O mapa poderá variar de tamanho caso você aumente ou diminua o tamanho do formulário. Assim, como as
 coordenadas X e Y são proporcionais, para determinar a o pixel (x, y) exato da cidade no mapa que está
 sendo exibido, a largura do mapa deve ser multiplicada pela coordenada X da cidade e a altura do mapa deve
 ser multiplicada pela coordenada Y da cidade. Por exemplo, se o mapa estiver sendo exibido com tamanho
@@ -41,5 +41,6 @@ nesses métodos de Hash.
 (feito) Quando o programa for finalizado, deve-se gravar em arquivo os dados armazenados na tabela de Hash.
 Essa gravação será feita no arquivo selecionado pelo usuário quando pressionou o botão [Abrir Arquivo].
 
-(não feito) salvar as alterações feita no arquivo na pasta certa não na bin
-(não feito) remover o metodo click do pbMapa
+(feito) salvar as alterações feita no arquivo na pasta certa não na bin
+
+(feito) remover o metodo click do pbMapa

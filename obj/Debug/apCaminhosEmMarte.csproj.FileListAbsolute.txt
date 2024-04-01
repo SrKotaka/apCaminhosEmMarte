@@ -18,3 +18,13 @@ C:/Users/u22129/Documents/GitHub/apCaminhosEmMarte/obj/Debug/apCaminhosEmMarte.p
 /home/kotaka/Documents/GitHub/apCaminhosEmMarte/obj/Debug/apCaminhosEmMarte.Properties.Resources.resources
 /home/kotaka/Documents/GitHub/apCaminhosEmMarte/obj/Debug/apCaminhosEmMarte.csproj.GenerateResource.cache
 /home/kotaka/Documents/GitHub/apCaminhosEmMarte/obj/Debug/apCaminhosEmMarte.csproj.CoreCompileInputs.cache
+C:\Users\u22129\Documents\apCaminhosMarte\bin\Debug\apCaminhosEmMarte.exe.config
+C:\Users\u22129\Documents\apCaminhosMarte\bin\Debug\apCaminhosEmMarte.exe
+C:\Users\u22129\Documents\apCaminhosMarte\bin\Debug\apCaminhosEmMarte.pdb
+C:\Users\u22129\Documents\apCaminhosMarte\obj\Debug\apCaminhosEmMarte.csproj.AssemblyReference.cache
+C:\Users\u22129\Documents\apCaminhosMarte\obj\Debug\apCaminhosEmMarte.FrmCaminhos.resources
+C:\Users\u22129\Documents\apCaminhosMarte\obj\Debug\apCaminhosEmMarte.Properties.Resources.resources
+C:\Users\u22129\Documents\apCaminhosMarte\obj\Debug\apCaminhosEmMarte.csproj.GenerateResource.cache
+C:\Users\u22129\Documents\apCaminhosMarte\obj\Debug\apCaminhosEmMarte.csproj.CoreCompileInputs.cache
+C:\Users\u22129\Documents\apCaminhosMarte\obj\Debug\apCaminhosEmMarte.exe
+C:\Users\u22129\Documents\apCaminhosMarte\obj\Debug\apCaminhosEmMarte.pdb
