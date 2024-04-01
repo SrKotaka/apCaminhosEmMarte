@@ -11,12 +11,12 @@ hash fique cheia, deverá ser realizada a técnica de Rehashing, transferindo os
 
 
 
-(meio feito) Após isso, o programa deverá mostrar cada cidade no mapa, usando um círculo preenchido e o nome da
+(feito) Após isso, o programa deverá mostrar cada cidade no mapa, usando um círculo preenchido e o nome da
 cidade para mostrar onde a cidade se encontra.
 
 
 
-(meio feito) O mapa poderá variar de tamanho caso você aumente ou diminua o tamanho do formulário. Assim, como as
+(feito) O mapa poderá variar de tamanho caso você aumente ou diminua o tamanho do formulário. Assim, como as
 coordenadas X e Y são proporcionais, para determinar a o pixel (x, y) exato da cidade no mapa que está
 sendo exibido, a largura do mapa deve ser multiplicada pela coordenada X da cidade e a altura do mapa deve
 ser multiplicada pela coordenada Y da cidade. Por exemplo, se o mapa estiver sendo exibido com tamanho
@@ -32,7 +32,7 @@ ler os dados e armazená-los na tabela de hash escolhida.
 
 
 
-(feito) Os botões [+], [-], [Lupa], [Lista] devem ser usados para chamar os métodos correspondentes na tabela de
+(meio feito) Os botões [+], [-], [Lupa], [Lista] devem ser usados para chamar os métodos correspondentes na tabela de
 Hash, usando o txtNome, udX e udY como dados de origem para criação do objeto Cidade que será usados
 nesses métodos de Hash.
 

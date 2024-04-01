@@ -29,13 +29,18 @@ namespace apCaminhosEmMarte
 
             foreach (var cidade in cidades)
             {
+                // Normalizar as coordenadas para o tamanho do PictureBox
+                float x = (float)(cidade.x * pbMapa.Width);
+                float y = (float)(cidade.y * pbMapa.Height);
+
                 // Desenhar um círculo no local da cidade
-                g.FillEllipse(brush, (float)cidade.x, (float)cidade.y, 10, 10);
+                g.FillEllipse(brush, x, y, 10, 10);
 
                 // Desenhar o nome da cidade próximo ao círculo
-                g.DrawString(cidade.nome, font, brush, (float)cidade.x + 10, (float)cidade.y);
+                g.DrawString(cidade.nome, font, brush, x + 10, y);
             }
         }
+
 
         private void btnAbrirArquivo_Click(object sender, EventArgs e)
         {
@@ -44,13 +49,11 @@ namespace apCaminhosEmMarte
                 // verificamos qual a técnica de Hash escolhida
                 // pelo usuário e criamos uma tabela de hash de
                 // acordo com essa escolha
-                if (rbBucketHash.Checked) 
+                if (rbBucketHash.Checked)
                     tabelaDeHash = new BucketHash<Cidade>();
-                else
-                if (rbSondagemLinear.Checked)
+                else if (rbSondagemLinear.Checked)
                     tabelaDeHash = new HashLinear<Cidade>();
-                else
-                if (rbSondagemQuadratica.Checked)
+                else if (rbSondagemQuadratica.Checked)
                     tabelaDeHash = new HashQuadratico<Cidade>();
                 else
                     tabelaDeHash = new HashDuplo<Cidade>();
@@ -61,16 +64,18 @@ namespace apCaminhosEmMarte
                     // Limpar o ListBox antes de adicionar as novas cidades
                     lsbListagem.Items.Clear();
 
-                    // ler registros do arquivo aberto
+                    // Ler registros do arquivo aberto
                     while (!asCidades.EndOfStream)
                     {
-                        // instanciar um objeto cidade
+                        // Instanciar um objeto cidade
                         Cidade cidade = new Cidade().LerRegistro(asCidades);
-                        // lê-lo do arquivo para preencher seus atributos
-                        // armazenar esse objeto na tabela de Hash
-                        // de acordo com a técnica de hash escolhida
-                        // pelo usuário
+
+                        // Inserir cidade na tabela de Hash
                         tabelaDeHash.Inserir(cidade);
+
+                        // Adicionar cidade à lista de cidades a serem desenhadas no mapa
+                        cidades.Add(cidade);
+
                         // Adicionar o nome da cidade à lista de cidades no ListBox
                         lsbListagem.Items.Add(cidade.nome);
                     }
@@ -83,15 +88,9 @@ namespace apCaminhosEmMarte
                 }
                 // Forçar o PictureBox a redesenhar sua superfície
                 pbMapa.Invalidate();
-                // Atualize a lista de cidades
-                cidades.Clear();
-                foreach (var item in tabelaDeHash.Conteudo())
-                {
-                    cidades.Add(new Cidade { nome = item });
-                }
-                // Desenhar os nomes das cidades no mapa de Marte
             }
         }
+
 
         private void FrmCaminhos_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -125,7 +124,7 @@ namespace apCaminhosEmMarte
             tabelaDeHash.Inserir(novaCidade);
 
             // Atualizar a lista de cidades exibida no ListBox
-            AtualizarListaCidades();
+            lsbListagem.Items.Add(novaCidade.nome);
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -138,7 +137,7 @@ namespace apCaminhosEmMarte
             tabelaDeHash.Remover(cidadeARemover);
 
             // Atualizar a lista de cidades exibida no ListBox
-            AtualizarListaCidades();
+            lsbListagem.Items.Remove(cidadeARemover.nome);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -146,6 +145,7 @@ namespace apCaminhosEmMarte
             // Criar um objeto Cidade com os dados dos campos de texto
             Cidade cidadeABuscar = new Cidade();
             cidadeABuscar.nome = txtNome.Text;
+
             // Verificar se a cidade existe na tabela de hash correspondente à opção selecionada pelo usuário
             int onde;
             bool existe = tabelaDeHash.Existe(cidadeABuscar, out onde);
@@ -159,6 +159,7 @@ namespace apCaminhosEmMarte
                 MessageBox.Show("A cidade não existe na tabela de hash.");
             }
         }
+
         private void AtualizarListaCidades()
         {
             // Limpar o ListBox
@@ -181,11 +182,6 @@ namespace apCaminhosEmMarte
         private void btnListagem_Click(object sender, EventArgs e)
         {
             AtualizarListaCidades();
-        }
-
-        private void pbMapa_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
