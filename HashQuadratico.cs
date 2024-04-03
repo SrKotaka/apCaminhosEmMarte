@@ -7,7 +7,9 @@ public class HashQuadratico<Tipo> : ITabelaDeHash<Tipo>
 {
     private const int tamanhoDaTabela = 131;
     private Tipo[] dados;
+    private List<string> chaves;
 
+    public List<string> Chaves => chaves;
     public HashQuadratico()
     {
         dados = new Tipo[tamanhoDaTabela];
@@ -27,8 +29,10 @@ public class HashQuadratico<Tipo> : ITabelaDeHash<Tipo>
     public bool Existe(Tipo item, out int onde)
     {
         onde = -1;
-        int indice = Hash(item.Chave);
-
+        int indiceInicial = Hash(item.Chave);
+        int indice = indiceInicial;
+        int i = 1;
+        
         while (dados[indice] != null)
         {
             if (dados[indice].Equals(item))
@@ -37,7 +41,8 @@ public class HashQuadratico<Tipo> : ITabelaDeHash<Tipo>
                 return true;
             }
 
-            indice = (indice + 1) % tamanhoDaTabela;
+            indice = indiceInicial + i * i;
+            i++;
         }
 
         return false;
@@ -47,11 +52,6 @@ public class HashQuadratico<Tipo> : ITabelaDeHash<Tipo>
     {
         int hash = Math.Abs(chave.GetHashCode());
         int indice = hash % tamanhoDaTabela;
-
-        for (int i = 1; dados[indice] != null; i++)
-        {
-            indice = (hash + i * i) % tamanhoDaTabela;
-        }
 
         return indice;
     }
@@ -63,11 +63,12 @@ public class HashQuadratico<Tipo> : ITabelaDeHash<Tipo>
 
         while (dados[indice] != null)
         {
-            indice = (indice + i * i) % tamanhoDaTabela;
+            indice = (indice + i * i);
             i++;
         }
 
         dados[indice] = item;
+        chaves.Add(item.Chave);
     }
 
     public bool Remover(Tipo item)
@@ -76,9 +77,25 @@ public class HashQuadratico<Tipo> : ITabelaDeHash<Tipo>
         if (Existe(item, out indice))
         {
             dados[indice] = default(Tipo);
+            chaves.Remove(item.Chave);
             return true;
         }
 
         return false;
+    }
+    
+    public Tipo Buscar(string chave)
+    {
+        int indice = Hash(chave);
+        int i = 1;
+        while (dados[indice] != null)
+        {
+            if (dados[indice].Chave == chave)
+                return dados[indice];
+            indice = (indice + i * i);
+            i++;
+        }
+
+        return default(Tipo);
     }
 }

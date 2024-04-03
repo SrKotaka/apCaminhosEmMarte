@@ -4,7 +4,7 @@ registos na tabela de hash escolhida pelo usuário nos radioGroups que vemos na 
 
 
 
-(meio feito) Portanto, usaremos, como tabela de hash, uma variável do tipo ITabelaDeHash, que é uma interface genérica
+(feito) Portanto, usaremos, como tabela de hash, uma variável do tipo ITabelaDeHash, que é uma interface genérica
 que descreve as operações requeridas pela Tabela de Hash. As quatro diferentes técnicas de Hash serão
 codificadas em quatro diferentes classes que implementam a interface ITabelaDeHash. Caso a tabela de
 hash fique cheia, deverá ser realizada a técnica de Rehashing, transferindo os dados para uma tabela maior.
@@ -32,9 +32,10 @@ ler os dados e armazená-los na tabela de hash escolhida.
 
 
 
-(feito) Os botões [+], [-], [Lupa], [Lista] devem ser usados para chamar os métodos correspondentes na tabela de
+(meio feito) Os botões [+], [-], [Lupa], [Lista] devem ser usados para chamar os métodos correspondentes na tabela de
 Hash, usando o txtNome, udX e udY como dados de origem para criação do objeto Cidade que será usados
 nesses métodos de Hash.
+//salvando tudo errado, e depois que concertar ver se esta salvando com as cordenadas
 
 
 

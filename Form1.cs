@@ -8,19 +8,18 @@ namespace apCaminhosEmMarte
 {
     public partial class FrmCaminhos : Form
     {
+        ITabelaDeHash<Cidade> tabelaDeHash;
         public FrmCaminhos()
         {
             InitializeComponent();
+            
+            tabelaDeHash = new BucketHash<Cidade>();
         }
-
-        ITabelaDeHash<Cidade> tabelaDeHash;
-        List<Cidade> cidades = new List<Cidade>(); 
-
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
-        private void DesenharCidadesNoMapa(List<Cidade> cidades, Graphics g)
+        private void DesenharCidadesNoMapa(Graphics g)
         {
             // Definir a cor do pincel para desenhar as cidades
             Brush brush = new SolidBrush(Color.Red);
@@ -28,8 +27,10 @@ namespace apCaminhosEmMarte
             // Definir a fonte para desenhar os nomes das cidades
             Font font = new Font("Arial", 10);
 
-            foreach (var cidade in cidades)
+            foreach (var chave in tabelaDeHash.Chaves)
             {
+                Cidade cidade = tabelaDeHash.Buscar(chave);
+                
                 // Normalizar as coordenadas para o tamanho do PictureBox
                 float x = (float)(cidade.x * pbMapa.Width);
                 float y = (float)(cidade.y * pbMapa.Height);
@@ -73,9 +74,7 @@ namespace apCaminhosEmMarte
 
                         // Inserir cidade na tabela de Hash
                         tabelaDeHash.Inserir(cidade);
-
-                        // Adicionar cidade à lista de cidades a serem desenhadas no mapa
-                        cidades.Add(cidade);
+                        
                     }
 
                     // Selecionar a primeira cidade da lista, se houver
@@ -102,8 +101,9 @@ namespace apCaminhosEmMarte
                 using (StreamWriter arquivoSaida = new StreamWriter("C:\\Temp\\cidades.txt"))
                 {
                     // Percorre a tabela de hash
-                    foreach (var cidade in tabelaDeHash.Conteudo())
+                    foreach (var chave in tabelaDeHash.Chaves)
                     {
+                        Cidade cidade = tabelaDeHash.Buscar(chave);
                         // Escreve cada registro no arquivo
                         arquivoSaida.WriteLine(cidade);
                     }
@@ -186,7 +186,7 @@ namespace apCaminhosEmMarte
         }
         private void pbMapa_Paint(object sender, PaintEventArgs e)
         {
-            DesenharCidadesNoMapa(cidades, e.Graphics);
+            DesenharCidadesNoMapa(e.Graphics);
         }
 
         private void btnListagem_Click(object sender, EventArgs e)

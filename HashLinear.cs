@@ -10,7 +10,9 @@ public class HashLinear<Tipo> : ITabelaDeHash<Tipo>
 {
     private const int tamanhoDaTabela = 131;
     Tipo[] dados;
+    private List<string> chaves;
 
+    public List<string> Chaves => chaves;
     public HashLinear()
     {
         dados = new Tipo[tamanhoDaTabela];
@@ -45,7 +47,7 @@ public class HashLinear<Tipo> : ITabelaDeHash<Tipo>
                 return true;
             }
 
-            indice = (indice + 1) % tamanhoDaTabela;
+            indice = (indice + 1);
         }
 
         return false;
@@ -63,6 +65,7 @@ public class HashLinear<Tipo> : ITabelaDeHash<Tipo>
         }
 
         dados[indice] = item;
+        chaves.Add(item.Chave);
     }
 
     public bool Remover(Tipo item)
@@ -71,9 +74,22 @@ public class HashLinear<Tipo> : ITabelaDeHash<Tipo>
         if (Existe(item, out indice))
         {
             dados[indice] = default(Tipo);
+            chaves.Remove(item.Chave);
             return true;
         }
 
         return false;
+    }
+    
+    public Tipo Buscar(string chave)
+    {
+        int indice = Hash(chave);
+        while (dados[indice] != null)
+        {
+            if (dados[indice].Chave == chave)
+                return dados[indice];
+            indice = (indice + 1);
+        }
+        return default(Tipo);
     }
 }

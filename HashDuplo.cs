@@ -7,6 +7,10 @@ public class HashDuplo<Tipo> : ITabelaDeHash<Tipo>
 {
     private const int tamanhoDaTabela = 131;
     private Tipo[] dados;
+    
+    private List<string> chaves;
+
+    public List<string> Chaves => chaves;
 
     public HashDuplo()
     {
@@ -27,9 +31,13 @@ public class HashDuplo<Tipo> : ITabelaDeHash<Tipo>
     public int Hash(string chave)
     {
         int hash1 = Math.Abs(chave.GetHashCode());
-        int hash2 = 7 - (Math.Abs(chave.GetHashCode()) % 7); // Escolha uma função de hash secundária adequada
 
-        return (hash1 + hash2) % tamanhoDaTabela; // Escolha uma função de hash adequada
+        return hash1 % tamanhoDaTabela; // Escolha uma função de hash adequada
+    }
+    
+    private int Hash2(string chave)
+    {
+        return 7 - (Hash(chave) % 7);
     }
 
     public void Inserir(Tipo item)
@@ -38,10 +46,11 @@ public class HashDuplo<Tipo> : ITabelaDeHash<Tipo>
 
         while (dados[indice] != null)
         {
-            indice = (indice + 1);
+            indice = (indice + Hash2(item.Chave));
         }
 
         dados[indice] = item;
+        chaves.Add(item.Chave);
     }
 
     public bool Remover(Tipo item)
@@ -50,6 +59,7 @@ public class HashDuplo<Tipo> : ITabelaDeHash<Tipo>
         if (Existe(item, out indice))
         {
             dados[indice] = default(Tipo);
+            chaves.Remove(item.Chave);
             return true;
         }
 
@@ -69,9 +79,24 @@ public class HashDuplo<Tipo> : ITabelaDeHash<Tipo>
                 return true;
             }
 
-            indice = (indice + 1) % tamanhoDaTabela;
+            indice = (indice + Hash2(item.Chave));
         }
 
         return false;
+    }
+    
+public Tipo Buscar(string chave)
+    {
+        int indice = Hash(chave);
+        
+        while (dados[indice] != null)
+        {
+            if (dados[indice].Chave == chave)
+                return dados[indice];
+            
+            indice = (indice + Hash2(chave));
+        }
+        
+        return default(Tipo);
     }
 }

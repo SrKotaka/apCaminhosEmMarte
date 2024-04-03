@@ -9,9 +9,13 @@ class BucketHash<Tipo> : ITabelaDeHash<Tipo>
 {
   private const int SIZE = 131;  // para gerar mais colisões; o ideal é primo > 100
   ArrayList[] dados;
+  private List<string> chaves;
 
+  public List<string> Chaves => chaves;
+  
   public BucketHash()
   {
+    chaves = new List<string>();
     dados = new ArrayList[SIZE];
     for (int i = 0; i < SIZE; i++)
         dados[i] = new ArrayList(1);
@@ -35,7 +39,10 @@ class BucketHash<Tipo> : ITabelaDeHash<Tipo>
   {
     int valorDeHash = Hash(item.Chave);
     if (!dados[valorDeHash].Contains(item)) // Contains procura o item e retorna True ou False
-       dados[valorDeHash].Add(item);
+    {
+      dados[valorDeHash].Add(item);
+      chaves.Add(item.Chave);
+    }
   }
 
   public bool Remover(Tipo item)
@@ -44,6 +51,7 @@ class BucketHash<Tipo> : ITabelaDeHash<Tipo>
     if (!Existe(item, out onde))
        return false;
     dados[onde].Remove(item);
+    chaves.Remove(item.Chave);
     return true;
   }
 
@@ -65,5 +73,14 @@ class BucketHash<Tipo> : ITabelaDeHash<Tipo>
         saida.Add(linha);
       }
     return saida;
+  }
+  
+  public Tipo Buscar(string chave)
+  {
+    int valorDeHash = Hash(chave);
+    foreach (Tipo item in dados[valorDeHash])
+      if (item.Chave == chave)
+        return item;
+    return default(Tipo);
   }
 }
