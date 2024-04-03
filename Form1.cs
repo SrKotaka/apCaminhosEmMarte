@@ -105,7 +105,7 @@ namespace apCaminhosEmMarte
                     {
                         Cidade cidade = tabelaDeHash.Buscar(chave);
                         // Escreve cada registro no arquivo
-                        arquivoSaida.WriteLine(cidade);
+                        cidade.EscreverRegistro(arquivoSaida);
                     }
                 }
             }
