@@ -101,7 +101,8 @@ namespace apCaminhosEmMarte
             if (tabelaDeHash != null)
             {
                 // Abre o arquivo para escrita
-                using (StreamWriter arquivoSaida = new StreamWriter("C:\\Temp\\cidades.txt"))
+                using (StreamWriter arquivoSaida = new StreamWriter(
+                    "C:\\Users\\Felipe Almeida\\Temp\\cidades.txt"))
                 {
                     // Percorre a tabela de hash
                     foreach (var chave in tabelaDeHash.Chaves)
@@ -124,6 +125,7 @@ namespace apCaminhosEmMarte
 
             // Inserir a cidade na tabela de hash correspondente à opção selecionada pelo usuário
             tabelaDeHash.Inserir(novaCidade);
+            pbMapa.Invalidate();
 
             // Atualizar a lista de cidades exibida no ListBox
             AtualizarListaCidades();
@@ -146,6 +148,7 @@ namespace apCaminhosEmMarte
             {
                 MessageBox.Show("Cidade não encontrada na tabela de hash.");
             }
+            pbMapa.Invalidate();
 
             // Atualizar a lista de cidades exibida no ListBox
             AtualizarListaCidades();
