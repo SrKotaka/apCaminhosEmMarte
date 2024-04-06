@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|c:\\users\\felipe almeida\\documents\\github\\apcaminhosemmarte\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|c:\\users\\felipe almeida\\documents\\github\\apcaminhosemmarte\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|solutionrelative:Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\buckethash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|solutionrelative:buckethash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\hashlinear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|solutionrelative:hashlinear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\hashduplo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|solutionrelative:hashduplo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\itabeladehash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|solutionrelative:itabeladehash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\hashquadratico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|solutionrelative:hashquadratico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{192E6CE3-5075-4AD2-BD05-D4895A34D8DF}|apCaminhosEmMarte.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +38,99 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 12,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HashQuadratico.cs",
+              "DocumentMoniker": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\HashQuadratico.cs",
+              "RelativeDocumentMoniker": "HashQuadratico.cs",
+              "ToolTip": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\HashQuadratico.cs",
+              "RelativeToolTip": "HashQuadratico.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:11:43.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ITabelaDeHash.cs",
+              "DocumentMoniker": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\ITabelaDeHash.cs",
+              "RelativeDocumentMoniker": "ITabelaDeHash.cs",
+              "ToolTip": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\ITabelaDeHash.cs",
+              "RelativeToolTip": "ITabelaDeHash.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:10:22.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HashDuplo.cs",
+              "DocumentMoniker": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\HashDuplo.cs",
+              "RelativeDocumentMoniker": "HashDuplo.cs",
+              "ToolTip": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\HashDuplo.cs",
+              "RelativeToolTip": "HashDuplo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:10:19.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HashLinear.cs",
+              "DocumentMoniker": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\HashLinear.cs",
+              "RelativeDocumentMoniker": "HashLinear.cs",
+              "ToolTip": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\HashLinear.cs",
+              "RelativeToolTip": "HashLinear.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:10:16.873Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BucketHash.cs",
+              "DocumentMoniker": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\BucketHash.cs",
+              "RelativeDocumentMoniker": "BucketHash.cs",
+              "ToolTip": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\BucketHash.cs",
+              "RelativeToolTip": "BucketHash.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:10:10.632Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -34,16 +142,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\Felipe Almeida\\Documents\\GitHub\\apCaminhosEmMarte\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAALAAAAAAAAAAAADgv8UAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T23:30:36.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-29T23:30:36.444Z"
             }
           ]
         }
