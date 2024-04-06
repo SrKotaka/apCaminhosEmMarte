@@ -20,7 +20,7 @@ namespace apCaminhosEmMarte
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+           
         }
         private void DesenharCidadesNoMapa(Graphics g)
         {
@@ -102,7 +102,7 @@ namespace apCaminhosEmMarte
             {
                 // Abre o arquivo para escrita
                 using (StreamWriter arquivoSaida = new StreamWriter(
-                    "C:\\Users\\Felipe Almeida\\Temp\\cidades.txt"))
+                    "C:\\Temp\\cidades.txt"))
                 {
                     // Percorre a tabela de hash
                     foreach (var chave in tabelaDeHash.Chaves)
