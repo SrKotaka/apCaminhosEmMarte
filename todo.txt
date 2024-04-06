@@ -1,3 +1,0 @@
-quando salva no buckethash ele salva errado as coordenadas
-
-leitura das 3 classes nao esta funcionando
