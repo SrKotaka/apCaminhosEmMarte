@@ -11,11 +11,12 @@ public class HashQuadratico<Tipo> : ITabelaDeHash<Tipo>
     private const int tamanhoDaTabela = 131;
     private Tipo[] dados;
     private List<string> chaves;
-
+    
     public List<string> Chaves => chaves;
     public HashQuadratico()
     {
         dados = new Tipo[tamanhoDaTabela];
+        chaves = new List<string>();
     }
 
     public List<string> Conteudo()

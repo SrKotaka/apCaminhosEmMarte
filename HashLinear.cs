@@ -19,6 +19,7 @@ public class HashLinear<Tipo> : ITabelaDeHash<Tipo>
     public HashLinear()
     {
         dados = new Tipo[tamanhoDaTabela];
+        chaves = new List<string>();
     }
 
     public List<string> Conteudo()

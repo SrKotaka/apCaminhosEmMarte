@@ -18,6 +18,7 @@ public class HashDuplo<Tipo> : ITabelaDeHash<Tipo>
     public HashDuplo()
     {
         dados = new Tipo[tamanhoDaTabela];
+        chaves = new List<string>();
     }
 
     public List<string> Conteudo()
