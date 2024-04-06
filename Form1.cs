@@ -98,7 +98,7 @@ namespace apCaminhosEmMarte
             if (tabelaDeHash != null)
             {
                 // Abre o arquivo para escrita
-                using (StreamWriter arquivoSaida = new StreamWriter("C:\\Temp\\cidades.txt"))
+                using (StreamWriter arquivoSaida = new StreamWriter("C:\\Documents\\cidades.txt"))
                 {
                     // Percorre a tabela de hash
                     foreach (var chave in tabelaDeHash.Chaves)
